@@ -116,6 +116,7 @@ FROM (
     SELECT *
     FROM data_valid_day_1.timesheet
     WHERE shift_type = 'Night'
-      AND (shift_end_time > '22:05:00' OR shift_start_time < '4:55:00')
+      AND shift_end_time NOT BETWEEN '22:00:00' AND '5:00:00'
     ) result;
+    
     
