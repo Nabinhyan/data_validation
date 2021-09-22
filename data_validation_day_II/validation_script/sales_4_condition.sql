@@ -73,6 +73,3 @@ SELECT COUNT(*) AS impacted_record_count,
        END  AS test_status
 FROM cte;
 
-
-
-
