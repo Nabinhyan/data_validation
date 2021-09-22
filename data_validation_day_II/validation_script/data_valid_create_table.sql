@@ -94,3 +94,4 @@ CREATE TABLE IF NOT EXISTS data_valid_day_2.sales(
     created_date VARCHAR(255),
     updated_date VARCHAR(255)
 );
+
