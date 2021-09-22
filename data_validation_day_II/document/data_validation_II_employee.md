@@ -16,10 +16,10 @@ To check the condition that if the employee is hired to multiple department on a
 WITH chk_multiple_department_one_employee_same_hire_date AS (
     SELECT
            client_employee_id,
-           hire_date::timestamp::date,
+           hire_date::TIMESTAMP::DATE,
            COUNT(department_id)
     FROM data_valid_day_2.employee
-    GROUP BY client_employee_id, hire_date::timestamp::date
+    GROUP BY client_employee_id, hire_date::TIMESTAMP::DATE
     HAVING COUNT(department_id)>1
 )
 SELECT COUNT(*) AS impacted_record_count,
