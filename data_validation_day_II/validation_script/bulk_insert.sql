@@ -20,3 +20,4 @@ COPY data_valid_day_2.sales
 FROM 'D:\leapfrog\Leapfrog_Database_note\data_validation\data_validation_day_II\dataset\sales.csv'
 DELIMITER ','
 CSV HEADER;
+
