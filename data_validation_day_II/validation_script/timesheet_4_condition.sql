@@ -42,3 +42,4 @@ SELECT COUNT(*) AS impacted_record_count,
        END  AS test_status
 FROM data_valid_day_2.timesheet
 WHERE break_hour > 0.75
+
