@@ -5,12 +5,12 @@ The product must be able to be sold only after the product is registered in prod
 WITH cte AS(
     SELECT
            CASE
-               WHEN bill_date = '2017-02-30 11:00:00' THEN '2017-02-28 11:00:00'::timestamp::date
-               ELSE bill_date::timestamp::date
+               WHEN bill_date = '2017-02-30 11:00:00' THEN '2017-02-28 11:00:00'::TIMESTAMP::DATE
+               ELSE bill_date::TIMESTAMP::DATE
                END As bill_date,
            CASE
-               WHEN created_date = '2017-02-30 11:00:00' THEN '2017-02-28 11:00:00'::timestamp::date
-               ELSE created_date::timestamp::date
+               WHEN created_date = '2017-02-30 11:00:00' THEN '2017-02-28 11:00:00'::TIMESTAMP::DATE
+               ELSE created_date::TIMESTAMP::DATE
                END As created_date
     FROM data_valid_day_2.sales
 )
@@ -34,8 +34,8 @@ WITH cte AS(
            bill_no,
            COUNT(DISTINCT (customer_id)),
            CASE
-               WHEN bill_date = '2017-02-30 11:00:00' THEN '2017-02-28 11:00:00'::timestamp::date
-               ELSE bill_date::timestamp::date
+               WHEN bill_date = '2017-02-30 11:00:00' THEN '2017-02-28 11:00:00'::TIMESTAMP::DATE
+               ELSE bill_date::TIMESTAMP::DATE
                END As bill_date
     FROM data_valid_day_2.sales GROUP BY bill_no, bill_date HAVING COUNT(DISTINCT (customer_id))>1
 )
